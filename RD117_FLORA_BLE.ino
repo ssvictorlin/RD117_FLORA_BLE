@@ -129,9 +129,9 @@ void setup() {
   /* Perform a factory reset to make sure everything is in a known state */
   Serial.println(F("Performing a factory reset: "));
   Serial.println(F("IN"));
-  if (! ble.factoryReset() ){
+  /*if (! ble.factoryReset() ){
        error(F("Couldn't factory reset"));
-  }
+  }*/
   Serial.println(F("OUT"));
   /* Disable command echo from Bluefruit */
   ble.echo(false);
@@ -142,7 +142,7 @@ void setup() {
 
   // this line is particularly required for Flora, but is a good idea
   // anyways for the super long lines ahead!
-  // ble.setInterCharWriteDelay(5); // 5 ms
+  ble.setInterCharWriteDelay(5); // 5 ms
 
   /* Change the device name to make it easier to find */
   Serial.println(F("Setting device name to 'Bluefruit HRM': "));
